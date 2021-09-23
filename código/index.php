@@ -6,12 +6,12 @@ $ info = curl_info ( $ server );
 
 if ( $ info [ 'http_code' ] == 200 ) {
     //Conectados
-    $ json_file = file_get_contents ( "https://viacep.com.br/ws/01001000/xml/" );   
-    $ json_str = json_decode ( $ json_file , verdadeiro );
-    $ logradouro = $ json_str [ "logradouro" ];
-    $ bairro = $ json_str [ "bairro" ];
-    $ localidade = $ json_str [ "localidade" ];
-    $ uf = $ json_str [ "uf" ];
+    $ xml_file = file_get_contents ( "https://viacep.com.br/ws/01001000/xml/" );   
+    $ xml_str = xml_decode ( $ xml_file , verdadeiro );
+    $ logradouro = $ xml_str [ "logradouro" ];
+    $ bairro = $ xml_str [ "bairro" ];
+    $ localidade = $ xml_str [ "localidade" ];
+    $ uf = $ xml_str [ "uf" ];
     echo  'Rua:' . $ logradouro . '- Bairro:' . $ bairro . '- Cidade:' . $ localidade . '- UF:' . $ uf ; // Comentário no uso (serve para testes)
 } else {
     //Desligada
